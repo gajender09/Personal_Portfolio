@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e674bba739.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1 class="logo"><span id="seperation">G</span>AJENDER.</h1>
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times"></i>
+                </ul>
+                <i class="fas fa-bars"></i>
+            </nav>
+            <div class="header-text">
+                <p>Hello!</p>
+                <h1>I'm&nbsp;<span class="sec-text">GAJENDER</span><br>from India</h1>
+            </div>
+        </div>
+    </div>
+    <!-- ----------ABOUT---------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png" alt="User Profile">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hello! I'm GAJENDER, a passionate and driven Computer Science Engineering student with a keen interest in 
+                    leveraging technology to solve real-world problems. As an aspiring professional in the field of technology, 
+                    I'm constantly exploring the ever-evolving landscape of computer science to broaden my understanding and skills.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
+                        <p class="tab-links" onclick="openTab('experience')">Experience</p>
+                        <p class="tab-links" onclick="openTab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Blockchain Developer</span><br>Writing Smart Contracts</li>
+                            <li><span>Web Development</span><br>Web app Development</li>
+                            <!-- <li><span>App Development</span><br>Building Android/iOS apps</li> -->
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2021 - Current</span><br>Web Development</li>
+                            <!-- <li><span>2019-2021</span><br>Web app Development</li>
+                            <li><span>2017-2019</span><br>UI/UX Design Executive at Coin Digital Ltd.</li>
+                            <li><span>2017-2019</span><br>Internship at eKart ecommerce.</li> -->
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2021-2025</span><br>B.Tech from Chandigarh University</li>
+                            <li><span>2019-2020</span><br>Class-12</li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------SERVICES---------- -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-brands fa-android"></i>
+                    <h2>App Development</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore aliquam nam sit. Soluta quasi
+                        officia, alias vitae fugiat fuga exercitationem.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Development</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore aliquam nam sit. Soluta quasi
+                        officia, alias vitae fugiat fuga exercitationem.</p>
+                    <a href="#">Learn more</a>
+
+                </div>
+                <div>
+
+                    <i class="fa-solid fa-crop-simple"></i>
+                    <h2>UI/UX Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore aliquam nam sit. Soluta quasi
+                        officia, alias vitae fugiat fuga exercitationem.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------PORTFOLIO--------- -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-1.png" alt="">
+                    <div class="layer">
+                        <h2>House Price Prediction</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quam facere quibusdam
+                            deserunt dolore vero. Incidunt ea nihil sint. Velit.</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.png" alt="">
+                    <div class="layer">
+                        <h2>Decentralized Voting System</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quam facere quibusdam
+                            deserunt dolore vero. Incidunt ea nihil sint. Velit.</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-3.png" alt="">
+                    <div class="layer">
+                        <h2>Supplychain Using Blockchain</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quam facere quibusdam
+                            deserunt dolore vero. Incidunt ea nihil sint. Velit.</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-4.png" alt="">
+                    <div class="layer">
+                        <h2>Sentiment Analysis Tool</h2>
+                        <p>Sentiment analysis is the process of analyzing digital text to determine 
+                            if the emotional tone of the message is positive, negative, or neutral. </p>
+                        <a href="https://github.com/gajender09/sentiment_analysis-tool" target=”_blank”><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="" class="btn">See More</a>
+        </div>
+    </div>
+
+    <!-- ----------CONTACT---------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i> mandiwalgajender0001@gmail.com</p>
+                    <p><i class="fas fa-phone-square-alt"></i> 9828270431</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/gaj3nder.09" target=”_blank” ><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/gaj3nder_09" target=”_blank” ><i class="fab fa-twitter-square"></i></a>
+                        <a href="https://www.instagram.com/gaj3nder_09/?hl=en" target=”_blank” ><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/gajender-mandiwal/" target=”_blank” ><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/gajender09" target=”_blank” ><i class="fab fa-github"></i></a>
+                    </div>
+                    <a href="images\my_resume.pdf" target=”_blank” class="btn btn2">Download Resume</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn3">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Made with <i class="fas fa-heart"></i> by GAJENDER</p>
+        </div>
+    </div>
+
+
+
+    <script>
+        var tabLinks = document.getElementsByClassName('tab-links');
+        var tabContents = document.getElementsByClassName('tab-contents');
+
+        function openTab(tabName) {
+            for (tabLink of tabLinks) {
+                tabLink.classList.remove('active-link');
+            }
+            for (tabContent of tabContents) {
+                tabContent.classList.remove('active-tab');
+            }
+            event.currentTarget.classList.add('active-link');
+            document.getElementById(tabName).classList.add('active-tab');
+        }
+
+        // JavaScript for handling the mobile navigation menu
+        document.querySelector('.fas.fa-bars').addEventListener('click', function () {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        document.querySelector('.fas.fa-times').addEventListener('click', function () {
+            document.querySelector('nav ul').classList.remove('show');
+        });
+
+        const text = document.querySelector(".sec-text");
+        const textLoad = () => {
+            setTimeout(() => {
+                text.textContent = "GAJENDER";
+            }, 0);
+            setTimeout(() => {
+                text.textContent = "Developer";
+            }, 4000);
+            setTimeout(() => {
+                text.textContent = "Freelancer";
+            }, 8000);
+        }
+        var i = 0;
+        var txt = text.textContent;
+        var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+        function typeWriter() {
+             if (i < txt.length) {
+             document.getElementById(".sec-text").innerHTML += txt.charAt(i);
+             i++;
+             setTimeout(typeWriter, speed);
+            }
+        }
+        textLoad();
+        setinterval(textLoad, 12000);
+        typeWriter();
+    
+       
+  
+    
+  </script>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyoKP4CBiRf0wuWUKPnjEJFgY5_DKsCjoU8RE9vX_4EDoB6ubbEIqoMvOyM_QMF8k_G/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+    
+</body>
+
+</html>
+

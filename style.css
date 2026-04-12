@@ -11,22 +11,12 @@ body {
 }
 
 #header {
+    width: 100%;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.header-text {
-    width: 50%;
-}
-
-.header-image {
-    width: 50%;
-    background-image: url('images/background.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right;
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-position: center;
+    /* background-repeat: no-repeat; */
 }
 
 .container {
@@ -102,9 +92,7 @@ nav ul li a:hover::after {
 }
 
 @keyframes blink {
-    50% {
-        opacity: 0;
-    }
+    50% { opacity: 0; }
 }
 
 @keyframes animate {
@@ -426,6 +414,7 @@ nav .fas {
     display: none;
 }
 
+/* ----------CSS FOR SMALL SCREEN---------- */
 @media only screen and (max-width: 600px) {
     #header {
         background-image: url('images/background.png');
@@ -443,29 +432,22 @@ nav .fas {
     nav .fas {
         display: block;
         font-size: 25px;
-        cursor: pointer;
     }
 
     nav ul {
         background: #b54768;
         position: fixed;
         top: 0;
-        right: -200px;
-        /* hidden by default */
         width: 200px;
-        /* FIXED */
+        right: 0;
         height: 100vh;
         padding-top: 50px;
-        transition: right 0.3s ease;
-    }
-
-    nav ul.show {
-        right: 0;
-        /* slide in */
     }
 
     nav ul li {
         display: block;
         margin: 25px;
     }
+
 }
+

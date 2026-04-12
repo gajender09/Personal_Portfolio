@@ -10,30 +10,13 @@ body {
     color: #fff;
 }
 
-/* #header {
-    width: 100%;
+#header {
+    /* width: 100%; */
     height: 100vh;
     background-image: url('images/background.png');
     background-size: 1080px;
-    background-position: 400px;
-    background-repeat: no-repeat;
-} */
-#header {
-    width: 100%;
-    height: 100vh;
-    background: url('images/background.png') no-repeat center;
-    background-size: cover;  /* 🔥 fills entire screen */
-}
-
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.hero-img {
-    display: none;
-    /* hide on desktop */
+    background-position: 280px;
+    /* background-repeat: no-repeat; */
 }
 
 .container {
@@ -109,9 +92,7 @@ nav ul li a:hover::after {
 }
 
 @keyframes blink {
-    50% {
-        opacity: 0;
-    }
+    50% { opacity: 0; }
 }
 
 @keyframes animate {
@@ -434,44 +415,33 @@ nav .fas {
 }
 
 /* ----------CSS FOR SMALL SCREEN---------- */
-
 @media only screen and (max-width: 600px) {
-     #header {
-        height: 100vh;
-
-        background-image: url('images/background.png');
-        background-repeat: no-repeat;
-
-        background-size: auto 85%;  /* 🔥 full height feel */
-        background-position: right -80px bottom; /* 👈 shift outside */
+    #header {
+        background-image: url(images/phone-background.png);
     }
 
     .header-text {
-        position: relative;
-        z-index: 2;
-
-        width: 60%;          /* 👈 text stays left */
-        padding: 20px;
-        margin-top: 40%;
+        margin-top: 100%;
+        font-size: 16px;
     }
 
     .header-text h1 {
-        font-size: 22px;
+        font-size: 30px;
     }
+
     nav .fas {
         display: block;
         font-size: 25px;
     }
 
     nav ul {
+        background: #b54768;
         position: fixed;
         top: 0;
-        right: -200px;
-        width: 200px;
+        width: 200;
+        right: 0;
         height: 100vh;
-        background: #ff004f;
-        padding-top: 60px;
-        transition: 0.3s;
+        padding-top: 50px;
     }
 
     nav ul li {
@@ -482,45 +452,49 @@ nav .fas {
 }
 
 /* ----------CSS FOR SMALL SCREEN---------- */
-@media (max-width: 768px) {
+@media only screen and (max-width: 600px) {
 
+    /* Adjust the header image and text size for small screens */
     #header {
-        width: 100%;
-        height: 100vh;
-
         background-image: url('images/background.png');
-        background-repeat: no-repeat;
-
-        background-size: auto 90%;
-        /* 🔥 responsive height */
-        background-position: right bottom;
-        /* keep person visible */
     }
 
     .header-text {
-        padding: 20px;
-        margin-top: 60%;
-        text-align: left;
+        margin-top: 100%;
+        font-size: 16px;
     }
 
     .header-text h1 {
-        font-size: 22px;
-        line-height: 1.4;
+        font-size: 30px;
     }
 
-    .header-text p {
-        font-size: 14px;
+    /* Show the navigation menu on small screens */
+    nav ul {
+        display: none;
+    }
+
+    nav .fas {
+        display: block;
+        font-size: 25px;
     }
 
     nav ul {
+        background: #b54768;
         position: fixed;
         top: 0;
-        right: -200px;
         width: 200px;
+        /* Increased the width to accommodate the menu items */
+        right: 0;
         height: 100vh;
-        background: #ff004f;
-        padding-top: 60px;
-        transition: 0.3s;
+        padding-top: 50px;
+        transform: translateX(200px);
+        /* Off-canvas menu, initially hidden */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    nav ul.show {
+        transform: translateX(0);
+        /* Show the menu when 'show' class is applied */
     }
 
     nav ul li {

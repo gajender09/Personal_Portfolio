@@ -13,8 +13,12 @@ body {
 #header {
     width: 100%;
     height: 100vh;
-    background: url(images/background.png) no-repeat right center;
-    background-size: contain;
+    background-image: url(images/background.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* center both directions */
+    background-size: 100% auto;
+    /* full width, height auto */
 }
 
 .container {
@@ -31,9 +35,10 @@ nav {
 .logo {
     font-size: 35px;
     width: 140px;
-   
+
 }
-#seperation{
+
+#seperation {
     color: #ff004f;
 }
 
@@ -78,11 +83,15 @@ nav ul li a:hover::after {
 .header-text h1 span {
     color: #ff004f;
 }
-@keyframes animate{
-    40%, 60%{
+
+@keyframes animate {
+
+    40%,
+    60% {
         left: calc(100% + 4px);
     }
-    100%{
+
+    100% {
         left: 0%;
     }
 }
@@ -230,7 +239,7 @@ width: 100%;
     position: relative;
     /* overflow: hidden;
     */
-   
+
 }
 
 .work img {
@@ -239,8 +248,8 @@ width: 100%;
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;
-    
-    
+
+
 }
 
 .layer {
@@ -436,16 +445,25 @@ nav .fas {
 
     /* Adjust the header image and text size for small screens */
     #header {
-        background-image: url(images\background.png);
+        background-image: url('images/background.png');
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: contain;
+        /* full image visible */
+        height: auto;
+        padding: 60px 20px;
     }
 
     .header-text {
-        margin-top: 100%;
+        margin-top: 20px;
+        /* ❌ remove 100% */
+        text-align: center;
         font-size: 16px;
     }
 
     .header-text h1 {
-        font-size: 30px;
+        font-size: 24px;
+        line-height: 1.4;
     }
 
     /* Show the navigation menu on small screens */

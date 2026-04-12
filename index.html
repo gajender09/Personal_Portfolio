@@ -42,9 +42,12 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>Hello! I'm GAJENDER, a passionate and driven Computer Science Engineering student with a keen interest in 
-                    leveraging technology to solve real-world problems. As an aspiring professional in the field of technology, 
-                    I'm constantly exploring the ever-evolving landscape of computer science to broaden my understanding and skills.</p>
+                    <p>Hello! I'm GAJENDER, a passionate and driven Computer Science Engineering student with a keen
+                        interest in
+                        leveraging technology to solve real-world problems. As an aspiring professional in the field of
+                        technology,
+                        I'm constantly exploring the ever-evolving landscape of computer science to broaden my
+                        understanding and skills.</p>
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
                         <p class="tab-links" onclick="openTab('experience')">Experience</p>
@@ -69,7 +72,7 @@
                         <ul>
                             <li><span>2021-2025</span><br>B.Tech from Chandigarh University</li>
                             <li><span>2019-2020</span><br>Class-12</li>
-                           
+
                         </ul>
                     </div>
                 </div>
@@ -143,9 +146,10 @@
                     <img src="images/work-4.png" alt="">
                     <div class="layer">
                         <h2>Sentiment Analysis Tool</h2>
-                        <p>Sentiment analysis is the process of analyzing digital text to determine 
+                        <p>Sentiment analysis is the process of analyzing digital text to determine
                             if the emotional tone of the message is positive, negative, or neutral. </p>
-                        <a href="https://github.com/gajender09/sentiment_analysis-tool" target=”_blank”><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/gajender09/sentiment_analysis-tool" target=”_blank”><i
+                                class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
             </div>
@@ -162,11 +166,15 @@
                     <p><i class="fas fa-paper-plane"></i> mandiwalgajender0001@gmail.com</p>
                     <p><i class="fas fa-phone-square-alt"></i> 9828270431</p>
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/gaj3nder.09" target=”_blank” ><i class="fab fa-facebook"></i></a>
-                        <a href="https://twitter.com/gaj3nder_09" target=”_blank” ><i class="fab fa-twitter-square"></i></a>
-                        <a href="https://www.instagram.com/gaj3nder_09/?hl=en" target=”_blank” ><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/gajender-mandiwal/" target=”_blank” ><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/gajender09" target=”_blank” ><i class="fab fa-github"></i></a>
+                        <a href="https://www.facebook.com/gaj3nder.09" target=”_blank”><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/gaj3nder_09" target=”_blank”><i
+                                class="fab fa-twitter-square"></i></a>
+                        <a href="https://www.instagram.com/gaj3nder_09/?hl=en" target=”_blank”><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/gajender-mandiwal/" target=”_blank”><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/gajender09" target=”_blank”><i class="fab fa-github"></i></a>
                     </div>
                     <a href="images\my_resume.pdf" target=”_blank” class="btn btn2">Download Resume</a>
                 </div>
@@ -228,33 +236,39 @@
         var speed = 50; /* The speed/duration of the effect in milliseconds */
 
         function typeWriter() {
-             if (i < txt.length) {
-             document.getElementById(".sec-text").innerHTML += txt.charAt(i);
-             i++;
-             setTimeout(typeWriter, speed);
+            if (i < txt.length) {
+                document.getElementById(".sec-text").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
             }
         }
         textLoad();
         setinterval(textLoad, 12000);
         typeWriter();
-    
-       
-  
-    
-  </script>
-  <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyoKP4CBiRf0wuWUKPnjEJFgY5_DKsCjoU8RE9vX_4EDoB6ubbEIqoMvOyM_QMF8k_G/exec'
-    const form = document.forms['submit-to-google-sheet']
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
-    
+
+
+
+
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyoKP4CBiRf0wuWUKPnjEJFgY5_DKsCjoU8RE9vX_4EDoB6ubbEIqoMvOyM_QMF8k_G/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    alert("Form submitted successfully ✅")
+                    form.reset()
+                })
+                .catch(error => {
+                    alert("Something went wrong ❌")
+                    console.error('Error!', error.message)
+                })
+        })
+    </script>
+
 </body>
 
 </html>
-

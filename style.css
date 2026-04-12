@@ -14,7 +14,7 @@ body {
     width: 100%;
     height: 100vh;
     background-image: url('images/background.png');
-    background-size: 1050px;
+    background-size: 1080px;
     background-position: 400px;
     background-repeat: no-repeat;
 }
@@ -92,7 +92,9 @@ nav ul li a:hover::after {
 }
 
 @keyframes blink {
-    50% { opacity: 0; }
+    50% {
+        opacity: 0;
+    }
 }
 
 @keyframes animate {
@@ -415,14 +417,19 @@ nav .fas {
 }
 
 /* ----------CSS FOR SMALL SCREEN---------- */
+
 @media only screen and (max-width: 600px) {
     #header {
-        background-image: url(images/phone-background.png);
+        background-position: center top;
+        background-size: contain;
+        /* show full image */
+        height: auto;
+        padding: 60px 20px;
     }
 
     .header-text {
-        margin-top: 100%;
-        font-size: 16px;
+        text-align: center;
+        margin-top: 200px;
     }
 
     .header-text h1 {
@@ -456,7 +463,14 @@ nav .fas {
 
     /* Adjust the header image and text size for small screens */
     #header {
-        background-image: url('images/background.png');
+        height: auto;
+        padding: 60px 20px;
+
+        background-size: 90%;
+        /* responsive width */
+        background-position: center top;
+        /* center image */
+        background-repeat: no-repeat;
     }
 
     .header-text {

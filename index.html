@@ -28,12 +28,12 @@
                 <i class="fas fa-bars"></i>
             </nav>
             <div class="header-text">
-    <p>Hello!</p>
-    <h1>
-  I'm <span class="sec-text"></span><span class="cursor"></span><br>
-  from India
-</h1>
-</div>
+                <p>Hello!</p>
+                <h1>
+                    I'm <span class="sec-text"></span><span class="cursor"></span><br>
+                    from India
+                </h1>
+            </div>
         </div>
     </div>
     <!-- ----------ABOUT---------- -->
@@ -223,34 +223,39 @@
         });
 
         const words = ["GAJENDER", "Developer", "Freelancer"];
-let i = 0, j = 0, isDeleting = false;
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
 
-const el = document.querySelector(".sec-text");
+        const el = document.querySelector(".sec-text");
 
-function type() {
-    let word = words[i];
+        function type() {
+            let current = words[wordIndex];
 
-    if (isDeleting) {
-        el.textContent = word.substring(0, j--);
-    } else {
-        el.textContent = word.substring(0, j++);
-    }
+            if (isDeleting) {
+                charIndex--;
+            } else {
+                charIndex++;
+            }
 
-    let speed = isDeleting ? 50 : 100;
+            el.textContent = current.substring(0, charIndex);
 
-    if (!isDeleting && j === word.length) {
-        isDeleting = true;
-        speed = 1500;
-    } else if (isDeleting && j === 0) {
-        isDeleting = false;
-        i = (i + 1) % words.length;
-        speed = 300;
-    }
+            let speed = isDeleting ? 50 : 100;
 
-    setTimeout(type, speed);
-}
+            if (!isDeleting && charIndex === current.length) {
+                speed = 1500; // pause
+                isDeleting = true;
+            }
+            else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                speed = 300;
+            }
 
-type();
+            setTimeout(type, speed);
+        }
+
+        type();
 
     </script>
     <script>

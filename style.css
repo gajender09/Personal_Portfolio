@@ -16,7 +16,6 @@ body {
     background-image: url(images/background.png);
     background-size: cover;
     background-position: center;
-    /* background-repeat: no-repeat; */
 }
 
 .container {
@@ -417,7 +416,7 @@ nav .fas {
 /* ----------CSS FOR SMALL SCREEN---------- */
 @media only screen and (max-width: 600px) {
     #header {
-        background-image: url('images/background.png');
+        background-image: url(images/phone-background.png);
     }
 
     .header-text {
@@ -438,7 +437,7 @@ nav .fas {
         background: #b54768;
         position: fixed;
         top: 0;
-        width: 200px;
+        width: 200;
         right: 0;
         height: 100vh;
         padding-top: 50px;
@@ -450,4 +449,3 @@ nav .fas {
     }
 
 }
-

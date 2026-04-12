@@ -214,13 +214,15 @@
         }
 
         // JavaScript for handling the mobile navigation menu
-        document.querySelector('.fas.fa-bars').addEventListener('click', function () {
-            document.querySelector('nav ul').classList.toggle('show');
-        });
+        document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector('.fa-bars').addEventListener('click', function () {
+        document.querySelector('nav ul').classList.add('show');
+    });
 
-        document.querySelector('.fas.fa-times').addEventListener('click', function () {
-            document.querySelector('nav ul').classList.remove('show');
-        });
+    document.querySelector('.fa-times').addEventListener('click', function () {
+        document.querySelector('nav ul').classList.remove('show');
+    });
+});
 
         const words = ["GAJENDER", "Developer", "Freelancer"];
         let wordIndex = 0;

@@ -91,7 +91,9 @@ nav ul li a:hover::after {
 }
 
 @keyframes blink {
-    50% { opacity: 0; }
+    50% {
+        opacity: 0;
+    }
 }
 
 @keyframes animate {
@@ -414,18 +416,21 @@ nav .fas {
 }
 
 /* ----------CSS FOR SMALL SCREEN---------- */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     #header {
         background-image: url(images/phone-background.png);
     }
 
     .header-text {
-        margin-top: 100%;
+        margin-top: 60%;
         font-size: 16px;
+        text-align: left; 
+        padding-left: 20px;
     }
 
     .header-text h1 {
         font-size: 30px;
+        text-align: left;
     }
 
     nav .fas {
@@ -437,10 +442,15 @@ nav .fas {
         background: #b54768;
         position: fixed;
         top: 0;
-        width: 200;
-        right: 0;
+        width: 200px;
+        right: -200px;
         height: 100vh;
         padding-top: 50px;
+        transition: right 0.3s ease;
+    }
+
+    nav ul.show {
+        right: 0;
     }
 
     nav ul li {

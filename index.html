@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Website</title>
+    <title>Personal Portfolio(GAJENDER)</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/e674bba739.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -17,20 +17,20 @@
         <div class="container">
             <nav>
                 <h1 class="logo"><span id="seperation">G</span>AJENDER.</h1>
-                <ul>
+                <ul id="sidemenu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <i class="fas fa-times"></i>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
                 </ul>
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
-                <p>Hello!</p>
+                <p>Software Engineer</p>
                 <h1>
-                    I'm <span class="sec-text"></span><span class="cursor"></span><br>
+                    Hi,I'm <span class="sec-text"></span><span class="cursor"></span><br>
                     from India
                 </h1>
             </div>
@@ -188,6 +188,7 @@
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn btn3">Submit</button>
                     </form>
+                    <span id="msg"></span>
                 </div>
             </div>
         </div>
@@ -213,17 +214,8 @@
             document.getElementById(tabName).classList.add('active-tab');
         }
 
-        // JavaScript for handling the mobile navigation menu
-        document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector('.fa-bars').addEventListener('click', function () {
-        document.querySelector('nav ul').classList.add('show');
-    });
-
-    document.querySelector('.fa-times').addEventListener('click', function () {
-        document.querySelector('nav ul').classList.remove('show');
-    });
-});
-
+    </script>
+    <script>
         const words = ["GAJENDER", "Developer", "Freelancer"];
         let wordIndex = 0;
         let charIndex = 0;
@@ -259,21 +251,39 @@
 
         type();
 
+
+    </script>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+
+
+
     </script>
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbyoKP4CBiRf0wuWUKPnjEJFgY5_DKsCjoU8RE9vX_4EDoB6ubbEIqoMvOyM_QMF8k_G/exec'
         const form = document.forms['submit-to-google-sheet']
+
+        const msg = document.getElementById("msg")
 
         form.addEventListener('submit', e => {
             e.preventDefault()
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 .then(response => {
-                    alert("Form submitted successfully ✅")
+                    msg.innerHTML = "Message sent successfully"
+                    setTimeout(function () {
+                        msg.innerHTML = "";
+                    }, 5000)
                     form.reset()
                 })
                 .catch(error => {
-                    alert("Something went wrong ❌")
                     console.error('Error!', error.message)
                 })
         })

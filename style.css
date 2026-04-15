@@ -236,7 +236,7 @@ nav ul li a:hover::after {
 }
 
 /* ----------PORTFOLIO---------- */
-#portfolio {
+.portfolio {
     padding: 50px 0;
 }
 
@@ -333,7 +333,7 @@ nav ul li a:hover::after {
 
 .work:hover .layer {
     height: 100%;
-}
+} */
 
 .btn {
     display: block;
@@ -349,7 +349,7 @@ nav ul li a:hover::after {
 
 .btn:hover {
     background: #ff004f;
-} */
+}
 
 
 .work-list {
@@ -362,13 +362,9 @@ nav ul li a:hover::after {
 /* CARD */
 .work {
     background: #111;
-    border-radius: 16px;
-    padding: 24px;
-    color: #fff;
-
+    border-radius: 14px;
+    padding: 20px;
     border: 1px solid rgba(255,255,255,0.08);
-
-    transition: all 0.3s ease;
 }
 
 /* HOVER = PREMIUM FEEL */
@@ -403,16 +399,15 @@ nav ul li a:hover::after {
 }
 
 .links {
-    margin-top: 20px;
+    margin-top: 12px;
+    display: flex;
+    gap: 12px;
 }
 
 .links a {
-    margin-right: 10px;
-    text-decoration: none;
     font-size: 13px;
     color: #ff004f;
-    border-bottom: 1px solid transparent;
-    transition: 0.3s;
+    text-decoration: none;
 }
 
 .links a:hover {
@@ -637,14 +632,38 @@ nav .fas {
     }
 
 
-    .work-list {
-        grid-template-columns: 1fr; /* 1 card per row */
+
+
+ .work-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
     }
 
     .work {
-        height: 200px; /* slightly smaller */
+        width: 100%;
+        min-height: 220px;   /* 👈 vertical feel */
+        padding: 18px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
+    .work-content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .work h2 {
+        font-size: 20px;
+    }
+
+    .work p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
 
 
 

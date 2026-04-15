@@ -444,8 +444,8 @@ nav .fas {
 
     .header-text {
         position: absolute;
-        bottom: 16%;
-        left: 30px;
+        bottom: 15%;
+        left: 28px;
         font-size: 30px;
         padding: 10px 4%;
         color: #fff;
@@ -457,7 +457,7 @@ nav .fas {
     }
 
     .logo {
-        font-size: 30px;
+        font-size: 28px;
         width: 130px;
     }
 

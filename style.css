@@ -265,26 +265,25 @@ nav ul li a:hover::after {
 
 } */
 
-.work-list {
+/* .work-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
     margin-top: 50px;
 }
 
-/* CARD */
 .work {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    height: 220px; /* 👈 consistent height */
+    height: 220px; 
 }
 
-/* IMAGE */
+
 .work img {
     width: 100%;
     height: 100%;
-    object-fit: cover;        /* 👈 key */
+    object-fit: cover;     
     display: block;
     transition: transform 0.4s ease;
 }
@@ -294,7 +293,6 @@ nav ul li a:hover::after {
 .layer {
     width: 100%;
     height: 0;
-    /* background: #ff004f; */
     background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
     border-radius: 10px;
     position: absolute;
@@ -351,7 +349,90 @@ nav ul li a:hover::after {
 
 .btn:hover {
     background: #ff004f;
+} */
+
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    margin-top: 50px;
 }
+
+/* CARD */
+.work {
+    background: #111;
+    border-radius: 16px;
+    padding: 24px;
+    color: #fff;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: all 0.3s ease;
+}
+
+/* HOVER = PREMIUM FEEL */
+.work:hover {
+    transform: translateY(-10px);
+    border-color: #ff004f;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+.work-content h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.work-content p {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.tech {
+    margin-top: 15px;
+}
+
+.tech span {
+    display: inline-block;
+    background: rgba(255,255,255,0.08);
+    padding: 5px 10px;
+    margin: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 13px;
+    color: #ff004f;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.links a:hover {
+    border-color: #ff004f;
+}
+
+.work::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: radial-gradient(circle at top left, rgba(255,0,79,0.2), transparent);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.work:hover::before {
+    opacity: 1;
+}
+
 
 /* ----------CONTACT---------- */
 .contact-left {

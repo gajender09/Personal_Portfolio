@@ -448,8 +448,12 @@ nav .fas {
         left: 28px;
         font-size: 25px;
         padding: 10px 4%;
-        color: #fff;
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        /* color: #fff;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); */
+        color: #ffffff;
+        text-shadow:
+            0 2px 6px rgba(0, 0, 0, 0.5),
+            0 0 2px rgba(0, 0, 0, 0.3);
     }
 
     .header-text h1 {

@@ -444,9 +444,8 @@ nav .fas {
 
     .header-text {
         position: absolute;
-        bottom: 18%;
-        left: 30px;
-        padding: 10px 10%;
+        bottom: 12%;
+        left: 20px;
         font-size: 30px;
         color: #fff;
         text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
@@ -454,6 +453,16 @@ nav .fas {
 
     .header-text h1 {
         font-size: 30px;
+    }
+
+    .container {
+        padding: 10px 10%;
+    }
+
+    .logo {
+        font-size: 35px;
+        width: 130px;
+
     }
 
     nav .fas {

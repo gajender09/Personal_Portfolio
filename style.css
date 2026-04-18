@@ -324,7 +324,7 @@ nav ul li a:hover::after {
     padding: 24px;
     color: #fff;
 
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 
     transition: all 0.3s ease;
 }
@@ -333,7 +333,7 @@ nav ul li a:hover::after {
 .work:hover {
     transform: translateY(-10px);
     border-color: #ff004f;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
 .work-content h2 {
@@ -353,7 +353,7 @@ nav ul li a:hover::after {
 
 .tech span {
     display: inline-block;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
     padding: 5px 10px;
     margin: 4px;
     border-radius: 6px;
@@ -382,7 +382,7 @@ nav ul li a:hover::after {
     position: absolute;
     inset: 0;
     border-radius: 16px;
-    background: radial-gradient(circle at top left, rgba(255,0,79,0.2), transparent);
+    background: radial-gradient(circle at top left, rgba(255, 0, 79, 0.2), transparent);
     opacity: 0;
     transition: 0.3s;
 }
@@ -392,26 +392,28 @@ nav ul li a:hover::after {
 }
 
 /* ---------- TIMELINE ---------- */
+/* ---------- TIMELINE ---------- */
 .timeline {
     position: relative;
     max-width: 900px;
     margin: 50px auto;
 }
 
-/* line */
+/* vertical line */
 .timeline::before {
     content: "";
     position: absolute;
-    left: 20px;
+    left: 24px;
+    top: 0;
     width: 2px;
     height: 100%;
-    background: #ff004f;
+    background: linear-gradient(#ff004f, transparent);
 }
 
 /* item */
 .timeline-item {
     position: relative;
-    padding-left: 60px;
+    padding-left: 70px;
     margin-bottom: 40px;
 
     opacity: 0;
@@ -423,12 +425,23 @@ nav ul li a:hover::after {
 .timeline-item::before {
     content: "";
     position: absolute;
-    left: 12px;
-    top: 5px;
-    width: 16px;
-    height: 16px;
+    left: 16px;
+    top: 22px;
+    width: 14px;
+    height: 14px;
     background: #ff004f;
     border-radius: 50%;
+}
+
+/* connector line */
+.timeline-item::after {
+    content: "";
+    position: absolute;
+    left: 30px;
+    top: 28px;
+    width: 30px;
+    height: 2px;
+    background: #ff004f;
 }
 
 /* year */
@@ -442,16 +455,18 @@ nav ul li a:hover::after {
 /* card */
 .timeline-content {
     background: #262626;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 22px;
+    border-radius: 12px;
 
-    border: 1px solid rgba(255,255,255,0.08);
-    transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
 }
 
+/* hover */
 .timeline-content:hover {
     transform: translateY(-6px);
     border-color: #ff004f;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* text */
@@ -465,17 +480,59 @@ nav ul li a:hover::after {
     color: #aaa;
 }
 
+/* tech tags */
+.tech {
+    margin-top: 12px;
+}
+
+.tech span {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 5px 10px;
+    margin: 4px 4px 0 0;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #ddd;
+}
+
+/* links */
 .timeline-content a {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 12px;
     color: #ff004f;
     text-decoration: none;
+    font-size: 14px;
 }
 
 /* hidden */
 .hidden {
     display: none;
 }
+
+/* SEE MORE BUTTON */
+#seeMoreBtn {
+    display: block;
+    margin: 40px auto 0;
+
+    background: transparent;
+    color: #fff;
+
+    border: 1px solid #ff004f;
+    padding: 12px 30px;
+    border-radius: 6px;
+
+    cursor: pointer;
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+#seeMoreBtn:hover {
+    background: #ff004f;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 0, 79, 0.4);
+}
+
 
 /*---------same----------*/
 
@@ -699,7 +756,7 @@ nav .fas {
 
     /*------portfolio------*/
 
-     .work-list {
+    .work-list {
         display: flex;
         flex-direction: column;
         gap: 16px;
@@ -707,7 +764,7 @@ nav .fas {
 
     .work {
         width: 100%;
-        min-height: 220px;   
+        min-height: 220px;
         padding: 18px;
 
         display: flex;
@@ -731,7 +788,7 @@ nav .fas {
     }
 
     .timeline::before {
-        left: 10px;
+        left: 12px;
     }
 
     .timeline-item {
@@ -740,6 +797,11 @@ nav .fas {
 
     .timeline-item::before {
         left: 4px;
+    }
+
+    .timeline-item::after {
+        left: 18px;
+        width: 15px;
     }
 
 }

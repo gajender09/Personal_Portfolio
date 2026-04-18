@@ -312,26 +312,21 @@ nav ul li a:hover::after {
 
 .work-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 👈 same as services */
-    grid-gap: 40px; /* 👈 same gap */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
     margin-top: 50px;
 }
 
 /* CARD */
 .work {
-    background: #262626;   /* 👈 same as services */
-    padding: 40px;         /* 👈 same internal size */
-    border-radius: 10px;   /* 👈 same shape */
+    background: #111;
+    border-radius: 16px;
+    padding: 24px;
+    color: #fff;
 
-    min-height: 260px;     /* 👈 keeps cards equal */
+    border: 1px solid rgba(255,255,255,0.08);
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    position: relative;
-
-    transition: background 0.5s, transform 0.5s, box-shadow 0.3s;
+    transition: all 0.3s ease;
 }
 
 /* HOVER = PREMIUM FEEL */
@@ -394,6 +389,92 @@ nav ul li a:hover::after {
 
 .work:hover::before {
     opacity: 1;
+}
+
+/* ---------- TIMELINE ---------- */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 50px auto;
+}
+
+/* line */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    width: 2px;
+    height: 100%;
+    background: #ff004f;
+}
+
+/* item */
+.timeline-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 40px;
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s ease;
+}
+
+/* dot */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background: #ff004f;
+    border-radius: 50%;
+}
+
+/* year */
+.year {
+    font-size: 12px;
+    color: #ff004f;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* card */
+.timeline-content {
+    background: #262626;
+    padding: 20px;
+    border-radius: 10px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.3s;
+}
+
+.timeline-content:hover {
+    transform: translateY(-6px);
+    border-color: #ff004f;
+}
+
+/* text */
+.timeline-content h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.timeline-content p {
+    font-size: 13px;
+    color: #aaa;
+}
+
+.timeline-content a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ff004f;
+    text-decoration: none;
+}
+
+/* hidden */
+.hidden {
+    display: none;
 }
 
 /*---------same----------*/
@@ -647,6 +728,18 @@ nav .fas {
     .work p {
         font-size: 13px;
         line-height: 1.5;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+    }
+
+    .timeline-item::before {
+        left: 4px;
     }
 
 }

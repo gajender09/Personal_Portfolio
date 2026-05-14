@@ -15,6 +15,7 @@
       src="https://kit.fontawesome.com/58a810656e.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   </head>
 
   <body>
@@ -319,10 +320,14 @@
                 rows="6"
                 placeholder="Your Message"
               ></textarea>
-              <button type="submit" class="btn btn3" id="submitBtn">
-                <span class="btn-text">Submit</span>
-                <span class="loader"></span>
-                <span class="success">✔</span>
+              <button type="submit" id="submitBtn" class="custom-btn">
+                <div class="button">
+                  <div class="text">Submit</div>
+                </div>
+                <div class="progress-bar"></div>
+                <svg viewBox="0 0 25 30">
+                  <path class="check" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2" />
+                </svg>
               </button>
             </form>
             <span id="msg"></span>
@@ -430,46 +435,97 @@
       const form = document.forms["submit-to-google-sheet"];
       const submitBtn = document.getElementById("submitBtn");
 
+      // anime setup
+      const path = document.querySelector(".check");
+      const offset = anime.setDashoffset(path);
+      path.setAttribute("stroke-dashoffset", offset);
+
+      var timeline = anime.timeline({ autoplay: false });
+
+      timeline
+        .add({
+          targets: "#submitBtn .text",
+          opacity: 0,
+          duration: 200,
+        })
+        .add({
+          targets: "#submitBtn .button",
+          scaleY: 0.2,
+          width: 250,
+          borderRadius: 100,
+          duration: 800,
+        })
+        .add({
+          targets: "#submitBtn .progress-bar",
+          width: 250,
+          duration: 1500,
+          easing: "linear",
+        })
+        .add({
+          targets: "#submitBtn .button",
+          width: 0,
+          duration: 1,
+        })
+        .add({
+          targets: "#submitBtn .progress-bar",
+          width: 40,
+          height: 40,
+          borderRadius: 50,
+          duration: 500,
+        })
+        .add({
+          targets: path,
+          strokeDashoffset: [offset, 0],
+          duration: 300,
+        });
+
+      // FORM SUBMIT
       form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        // Prevent multiple clicks
-        if (submitBtn.classList.contains("loading")) return;
+        if (submitBtn.disabled) return;
 
-        // Disable + lock button completely
         submitBtn.disabled = true;
-        submitBtn.style.pointerEvents = "none";
 
-        // Loading state
         submitBtn.classList.add("loading");
+
+        // start animation
+        timeline.restart();
 
         fetch(scriptURL, {
           method: "POST",
           body: new FormData(form),
         })
           .then(() => {
-            // Success state
-            submitBtn.classList.remove("loading");
-            submitBtn.classList.add("success-state");
-
             form.reset();
 
-            // Reset after 2 sec
             setTimeout(() => {
-              submitBtn.classList.remove("success-state");
-
-              // enable again
               submitBtn.disabled = false;
-              submitBtn.style.pointerEvents = "auto";
+
+              submitBtn.classList.remove("loading");
+
+              // reset animation
+              timeline.pause();
+              timeline.seek(0);
+
+              document.querySelector("#submitBtn .text").style.opacity = 1;
+
+              const btn = document.querySelector("#submitBtn .button");
+              btn.style.width = "100%";
+              btn.style.height = "100%";
+              btn.style.borderRadius = "8px";
+
+              const bar = document.querySelector("#submitBtn .progress-bar");
+              bar.style.width = "0";
+              bar.style.height = "8px";
+              bar.style.borderRadius = "50px";
             }, 3000);
           })
           .catch((error) => {
             console.error("Error!", error.message);
 
-            // Reset on error
-            submitBtn.classList.remove("loading");
             submitBtn.disabled = false;
-            submitBtn.style.pointerEvents = "auto";
+            submitBtn.classList.remove("loading");
           });
       });
     </script>

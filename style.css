@@ -392,7 +392,6 @@ nav ul li a:hover::after {
 }
 
 /* ---------- TIMELINE ---------- */
-/* ---------- TIMELINE ---------- */
 .timeline {
     position: relative;
     max-width: 900px;
@@ -632,6 +631,27 @@ form .btn2 {
     cursor: pointer;
 
 
+}
+
+.loader {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* optional: subtle disabled effect */
+button:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
 }
 
 .copyright {

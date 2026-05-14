@@ -419,70 +419,26 @@
       }
     </script>
 
-    <!-- <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyoKP4CBiRf0wuWUKPnjEJFgY5_DKsCjoU8RE9vX_4EDoB6ubbEIqoMvOyM_QMF8k_G/exec'
-        const form = document.forms['submit-to-google-sheet']
-
-        const msg = document.getElementById("msg")
-
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    msg.innerHTML = "Message sent successfully"
-                    setTimeout(function () {
-                        msg.innerHTML = "";
-                    }, 5000)
-                    form.reset()
-                })
-                .catch(error => {
-                    console.error('Error!', error.message)
-                })
-        })
-    </script> -->
-
     <script>
       const scriptURL =
         "https://script.google.com/macros/s/AKfycbyoKP4CBiRf0wuWUKPnjEJFgY5_DKsCjoU8RE9vX_4EDoB6ubbEIqoMvOyM_QMF8k_G/exec";
       const form = document.forms["submit-to-google-sheet"];
+
       const msg = document.getElementById("msg");
-      const btn = form.querySelector("button");
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        if (btn.disabled) return;
-
-        btn.disabled = true;
-        btn.innerHTML = `<span class="loader"></span> Submit`;
-
-        fetch(scriptURL, {
-          method: "POST",
-          body: new FormData(form),
-        })
-          .then((res) => res.json()) // ✅ IMPORTANT FIX
-          .then((data) => {
-            if (data.result === "success") {
-              btn.innerHTML = `<span class="tick">✔</span> Sent`;
-              msg.innerHTML = "Message sent successfully";
-              form.reset();
-
-              setTimeout(() => {
-                msg.innerHTML = "";
-                btn.innerHTML = "Submit";
-                btn.disabled = false;
-              }, 1500);
-            } else {
-              throw new Error("Failed");
-            }
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "Message sent successfully";
+            setTimeout(function () {
+              msg.innerHTML = "";
+            }, 5000);
+            form.reset();
           })
           .catch((error) => {
-            console.error(error);
-
-            msg.innerHTML = "Something went wrong";
-            btn.innerHTML = "Submit";
-            btn.disabled = false;
+            console.error("Error!", error.message);
           });
       });
     </script>

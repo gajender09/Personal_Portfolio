@@ -547,11 +547,24 @@ form textarea {
     border: 0;
     outline: none;
     background: #262626;
-    padding: 15px;
+    padding: 14px 16px;
     margin: 15px 0;
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.5;
     border-radius: 6px;
+    display: block;
+}
+
+form input,
+form textarea {
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+    border: 1px solid #ff004f;
+    box-shadow: 0 0 8px rgba(255, 0, 79, 0.4);
 }
 
 form .btn2 {
@@ -559,8 +572,6 @@ form .btn2 {
     font-size: 18px;
     margin-top: 20px;
     cursor: pointer;
-
-
 }
 
 .copyright {
@@ -863,3 +874,5 @@ nav .fas {
 #submitBtn.resetting {
     transform: scale(1);
 }
+
+
